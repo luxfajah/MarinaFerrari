@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,700;1,9..144,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 
-  <link rel="stylesheet" href="junho.css?v=2.2"/>
+  <link rel="stylesheet" href="maio.css?v=2.2"/>
   <style>
     /* Critical CSS to prevent flash of content */
     .preloader {
@@ -17,7 +17,7 @@
       transition: opacity 0.6s, visibility 0.6s;
     }
     
-    /* Custom style overrides */
+    /* Custom overrides */
     .hero-logo-text {
       font-family: 'Inter', -apple-system, sans-serif;
       font-size: 3.5rem;
@@ -54,6 +54,47 @@
       font-family: 'Inter', -apple-system, sans-serif;
       font-size: 14px;
       font-weight: bold;
+    }
+
+    /* Media Placeholders for pending items */
+    .media-placeholder {
+      width: 100%;
+      aspect-ratio: 4/5;
+      background: linear-gradient(135deg, rgba(113, 7, 41, 0.08) 0%, rgba(113, 7, 41, 0.03) 100%);
+      border: 2px dashed rgba(113, 7, 41, 0.2);
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 24px;
+      text-align: center;
+      color: #710729;
+      box-shadow: inset 0 4px 12px rgba(113,7,41,0.02);
+      box-sizing: border-box;
+    }
+    .media-placeholder .mp-icon {
+      font-size: 40px;
+      color: #710729;
+      opacity: 0.7;
+      animation: pulseIcon 2.5s infinite;
+    }
+    .media-placeholder .mp-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+    .media-placeholder .mp-desc {
+      font-size: 11px;
+      opacity: 0.6;
+      max-width: 220px;
+      line-height: 1.4;
+    }
+    @keyframes pulseIcon {
+      0%, 100% { opacity: 0.5; transform: scale(1); }
+      50% { opacity: 0.85; transform: scale(1.05); }
     }
   </style>
 
@@ -110,7 +151,7 @@
         <img src="foto.jpg" alt="Marina Ferrari">
       </div>
       <div class="dh-titles">
-        <div class="dh-eyebrow">Planejamento de conteúdo · Junho</div>
+        <div class="dh-eyebrow">Planejamento de conteúdo · Maio</div>
         <h1 class="dh-name">Marina Ferrari</h1>
         <p class="dh-tagline">Revise, comente e aprove as peças abaixo.</p>
       </div>
@@ -122,7 +163,7 @@
         <div class="m-icon">📋</div>
         <div class="m-text">
           <span class="m-label">Foco da Campanha</span>
-          <span class="m-val">Posicionamento Estratégico</span>
+          <span class="m-val">Saúde Ginecológica e Oncologia</span>
         </div>
       </div>
       <div class="metric-box">
@@ -137,7 +178,7 @@
       <div class="dh-progress-box">
         <div class="dh-progress-texts">
           <span class="dh-prog-label">Progresso</span>
-          <span class="dh-prog-count" id="infoCount">0 de 4 aprovados</span>
+          <span class="dh-prog-count" id="infoCount">0 de 8 aprovados</span>
         </div>
         <div class="dh-pb-track">
           <div class="dh-pb-fill" id="infoFill" style="width:0%"></div>
@@ -148,7 +189,6 @@
     
   </div>
   
-  <!-- Dummy elements to prevent JS errors since we removed the double bars -->
   <div style="display:none;">
     <div id="pbFill"></div>
     <div id="pbLabel"></div>
@@ -177,17 +217,17 @@
             </div>
             
             <div class="igp-bio-name">
-              Marina Ferrari | Criação &amp; Posicionamento
+              Marina Ferrari | Ginecologia &amp; Obstetrícia
             </div>
             
             <div class="igp-stats">
-              <div class="igp-stat"><div class="igp-stat-num">4</div><div class="igp-stat-lbl">posts</div></div>
+              <div class="igp-stat"><div class="igp-stat-num">8</div><div class="igp-stat-lbl">posts</div></div>
               <div class="igp-stat"><div class="igp-stat-num">1.204</div><div class="igp-stat-lbl">seguidores</div></div>
               <div class="igp-stat"><div class="igp-stat-num">950</div><div class="igp-stat-lbl">seguindo</div></div>
             </div>
 
             <div class="igp-bio">
-              | Especialista em Criação e Posicionamento Digital<br>| Conteúdos Estratégicos que Conectam<br>| Duas Mãos Comunicação... <span style="color:#a0a0a0;">mais</span>
+              | Especialista em Ginecologia e Obstetrícia<br>| Saúde Ginecológica pós-câncer e Menopausa<br>| Duas Mãos Comunicação... <span style="color:#a0a0a0;">mais</span>
             </div>
             <a href="https://linktr.ee/marinaferrari" class="igp-bio-link" target="_blank" style="color:#00376b;text-decoration:none;">🔗 linktr.ee/marinaferrari</a>
             
@@ -241,20 +281,40 @@
 
       <div class="igp-grid">
         <div class="igp-grid-item" onclick="openLightbox('1')">
-          <img src="Junho/Post 1 - 1.png" alt="Post 1" loading="lazy" decoding="async">
+          <img src="Maio/Post 1 - 1.png" alt="Post 1" loading="lazy" decoding="async">
           <span class="grid-num">01</span>
         </div>
         <div class="igp-grid-item" onclick="openLightbox('2')">
-          <img src="Junho/Post 2 - 1.png" alt="Post 2" loading="lazy" decoding="async">
+          <img src="Maio/Post 2 - 1.png" alt="Post 2" loading="lazy" decoding="async">
           <span class="grid-num">02</span>
         </div>
         <div class="igp-grid-item" onclick="openLightbox('3')">
-          <img src="Junho/Post 3 - 1.png" alt="Post 3" loading="lazy" decoding="async">
+          <img src="Maio/Post 3 - 1.png" alt="Post 3" loading="lazy" decoding="async">
           <span class="grid-num">03</span>
         </div>
-        <div class="igp-grid-item" onclick="openLightbox('4')">
-          <img src="Junho/Post 7.png" alt="Post 4" loading="lazy" decoding="async">
+        <div class="igp-grid-item" onclick="goToPost(3)" style="background:#f0eae4; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px;">
+          <span class="material-symbols-outlined" style="font-size:24px; color:#710729; opacity:0.6;">videocam</span>
+          <span style="font-size:10px; font-weight:600; color:#710729; opacity:0.7; font-family:'Inter',sans-serif;">Aguardando</span>
           <span class="grid-num">04</span>
+        </div>
+        <div class="igp-grid-item" onclick="goToPost(4)" style="background:#f0eae4; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px;">
+          <span class="material-symbols-outlined" style="font-size:24px; color:#710729; opacity:0.6;">videocam</span>
+          <span style="font-size:10px; font-weight:600; color:#710729; opacity:0.7; font-family:'Inter',sans-serif;">Aguardando</span>
+          <span class="grid-num">05</span>
+        </div>
+        <div class="igp-grid-item" onclick="goToPost(5)" style="background:#f0eae4; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px;">
+          <span class="material-symbols-outlined" style="font-size:24px; color:#710729; opacity:0.6;">videocam</span>
+          <span style="font-size:10px; font-weight:600; color:#710729; opacity:0.7; font-family:'Inter',sans-serif;">Aguardando</span>
+          <span class="grid-num">06</span>
+        </div>
+        <div class="igp-grid-item" onclick="openLightbox('7')">
+          <img src="Maio/Post 7.png" alt="Post 7" loading="lazy" decoding="async">
+          <span class="grid-num">07</span>
+        </div>
+        <div class="igp-grid-item" onclick="goToPost(7)" style="background:#f0eae4; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px;">
+          <span class="material-symbols-outlined" style="font-size:24px; color:#710729; opacity:0.6;">photo_camera</span>
+          <span style="font-size:10px; font-weight:600; color:#710729; opacity:0.7; font-family:'Inter',sans-serif;">Aguardando</span>
+          <span class="grid-num">08</span>
         </div>
       </div>
     </div>
@@ -275,6 +335,14 @@
     <div class="pi-item" data-idx="2" onclick="goToPost(2)">3</div>
     <div class="pi-sep">–</div>
     <div class="pi-item" data-idx="3" onclick="goToPost(3)">4</div>
+    <div class="pi-sep">–</div>
+    <div class="pi-item" data-idx="4" onclick="goToPost(4)">5</div>
+    <div class="pi-sep">–</div>
+    <div class="pi-item" data-idx="5" onclick="goToPost(5)">6</div>
+    <div class="pi-sep">–</div>
+    <div class="pi-item" data-idx="6" onclick="goToPost(6)">7</div>
+    <div class="pi-sep">–</div>
+    <div class="pi-item" data-idx="7" onclick="goToPost(7)">8</div>
   </div>
 
 
@@ -283,8 +351,6 @@
 <!-- ══ POST 1 ══ -->
 <section class="post-section" id="sec-1" style="position:relative;">
   <div class="post-split">
-    
-    <!-- LEFT: Image Gallery -->
     <div class="gallery-col reveal">
         <div class="ig-carousel">
           <div class="ig-mock-header">
@@ -292,17 +358,17 @@
               <img src="foto.jpg" class="ig-mock-ava" alt="Marina">
               <div class="ig-mock-info">
                 <span class="ig-mock-name">marinaferrari</span>
-                <span class="ig-mock-date">Junho 2026</span>
+                <span class="ig-mock-date">Maio 2026</span>
               </div>
             </div>
             <span class="material-symbols-outlined ig-mock-more">more_horiz</span>
           </div>
           <div class="ig-track" id="itrack-1" style="cursor:pointer" onclick="openLightbox('1')">
-            <div class="ig-slide"><img src="Junho/Post 1 - 1.png" loading="lazy" decoding="async"></div>
-            <div class="ig-slide"><img src="Junho/Post 1 - 2.png" loading="lazy" decoding="async"></div>
-            <div class="ig-slide"><img src="Junho/Post 1 - 3.png" loading="lazy" decoding="async"></div>
-            <div class="ig-slide"><img src="Junho/Post 1 - 4.png" loading="lazy" decoding="async"></div>
-            <div class="ig-slide"><img src="Junho/Post 1 - 5.png" loading="lazy" decoding="async"></div>
+            <div class="ig-slide"><img src="Maio/Post 1 - 1.png" loading="lazy" decoding="async"></div>
+            <div class="ig-slide"><img src="Maio/Post 1 - 2.png" loading="lazy" decoding="async"></div>
+            <div class="ig-slide"><img src="Maio/Post 1 - 3.png" loading="lazy" decoding="async"></div>
+            <div class="ig-slide"><img src="Maio/Post 1 - 4.png" loading="lazy" decoding="async"></div>
+            <div class="ig-slide"><img src="Maio/Post 1 - 5.png" loading="lazy" decoding="async"></div>
           </div>
           
           <div class="ig-dots" id="idots-1"></div>
@@ -311,16 +377,15 @@
         </div>
     </div>
     
-    <!-- RIGHT: Info & Actions -->
     <div class="post-panel reveal" style="transition-delay:.1s">
       <div class="post-head">
         <div class="ph-top-row">
           <div class="post-eyebrow">
-            <span id="eyebrow-1">Carrossel</span> <span class="date"> Quinta, 04 de Junho</span>
+            <span id="eyebrow-1">Carrossel</span> <span class="date"> Quinta, 07 de Maio</span>
           </div>
           <div class="sb sb-none" id="badge-1"><span class="sbp"></span>Aguardando</div>
         </div>
-        <h3 class="post-title">Peça 01 — <em>Apresentação</em></h3>
+        <h3 class="post-title">Peça 01 — <em>Efeitos Ginecológicos do Tratamento Oncológico</em></h3>
       </div>
       
       <div class="caption-blk" style="padding: 0; background: transparent; border-radius: 0;">
@@ -330,11 +395,11 @@
               <span class="material-symbols-outlined">view_carousel</span> Texto das Artes (Copy)
             </div>
             <div class="copy-cards">
-              <div class="copy-card"><strong>Lâmina 01</strong> [Slide 1] Texto de apresentação da primeira lâmina.</div>
-              <div class="copy-card"><strong>Lâmina 02</strong> [Slide 2] Detalhamento sobre a história e os bastidores.</div>
-              <div class="copy-card"><strong>Lâmina 03</strong> [Slide 3] O propósito do trabalho e o que ela desenvolve.</div>
-              <div class="copy-card"><strong>Lâmina 04</strong> [Slide 4] Como a criação de conteúdo impacta seus clientes.</div>
-              <div class="copy-card"><strong>Lâmina 05</strong> [Slide 5] Chamada para ação e convite para interagir.</div>
+              <div class="copy-card"><strong>Lâmina 01</strong> Efeitos ginecológicos do tratamento oncológico que talvez você nunca tenha ouvido falar</div>
+              <div class="copy-card"><strong>Lâmina 02</strong> O câncer ginecológico está relacionado à morbidade e mortalidade das mulheres brasileiras. Essas patologias impactam não apenas na saúde pública de maneira geral, mas existe um reflexo na qualidade de vida, sexualidade e funcionamento psicossocial das milhares de mulheres acometidas.</div>
+              <div class="copy-card"><strong>Lâmina 03</strong> Quimioterapia, radioterapia e hormonioterapia podem causar uma queda brusca de estrogênio, mesmo em mulheres jovens. O resultado é um conjunto de sintomas que afetam diretamente a vagina, a vulva e a uretra, todo o sistema genitourinário: ressecamento intenso, ardor, sensação de queimação e dor.</div>
+              <div class="copy-card"><strong>Lâmina 04</strong> Não somente as pacientes oncológicas, mas a perda do útero, dos ovários ou de parte da vulva não é só física. Para muitas mulheres, esses órgãos carregam identidade. A sensação de "não ser mais mulher do mesmo jeito" é legítima e raramente abordada no contexto médico. Nomear esse sofrimento já é parte do cuidado. Inclusive, a ginecologia regenerativa existe não para devolver o que foi, mas para reconstruir o que ainda é possível.</div>
+              <div class="copy-card"><strong>Lâmina 05</strong> Se algum desses efeitos existe na sua vida ou na de alguém próxima, encaminhe este conteúdo, mas não deixe de falar e estar atenta às possibilidades.</div>
             </div>
           </div>
           <div class="content-group">
@@ -343,7 +408,7 @@
             </div>
             <div class="caption-body">
               <span class="handle">marinaferrari</span>
-              Escreva aqui a legenda final do post de apresentação.
+              (Legenda a ser inserida)
             </div>
           </div>
         </div>
@@ -361,15 +426,12 @@
         </div>
       </div>
     </div>
-    
   </div>
 </section>
 
 <!-- ══ POST 2 ══ -->
 <section class="post-section" id="sec-2" style="position:relative;">
   <div class="post-split">
-    
-    <!-- LEFT: Image Gallery -->
     <div class="gallery-col reveal">
         <div class="ig-carousel">
           <div class="ig-mock-header">
@@ -377,17 +439,17 @@
               <img src="foto.jpg" class="ig-mock-ava" alt="Marina">
               <div class="ig-mock-info">
                 <span class="ig-mock-name">marinaferrari</span>
-                <span class="ig-mock-date">Junho 2026</span>
+                <span class="ig-mock-date">Maio 2026</span>
               </div>
             </div>
             <span class="material-symbols-outlined ig-mock-more">more_horiz</span>
           </div>
           <div class="ig-track" id="itrack-2" style="cursor:pointer" onclick="openLightbox('2')">
-            <div class="ig-slide"><img src="Junho/Post 2 - 1.png" loading="lazy" decoding="async"></div>
-            <div class="ig-slide"><img src="Junho/Post 2 - 2.png" loading="lazy" decoding="async"></div>
-            <div class="ig-slide"><img src="Junho/Post 2 - 3.png" loading="lazy" decoding="async"></div>
-            <div class="ig-slide"><img src="Junho/Post 2 - 4.png" loading="lazy" decoding="async"></div>
-            <div class="ig-slide"><img src="Junho/Post 2 - 5.png" loading="lazy" decoding="async"></div>
+            <div class="ig-slide"><img src="Maio/Post 2 - 1.png" loading="lazy" decoding="async"></div>
+            <div class="ig-slide"><img src="Maio/Post 2 - 2.png" loading="lazy" decoding="async"></div>
+            <div class="ig-slide"><img src="Maio/Post 2 - 3.png" loading="lazy" decoding="async"></div>
+            <div class="ig-slide"><img src="Maio/Post 2 - 4.png" loading="lazy" decoding="async"></div>
+            <div class="ig-slide"><img src="Maio/Post 2 - 5.png" loading="lazy" decoding="async"></div>
           </div>
           
           <div class="ig-dots" id="idots-2"></div>
@@ -396,16 +458,15 @@
         </div>
     </div>
     
-    <!-- RIGHT: Info & Actions -->
     <div class="post-panel reveal" style="transition-delay:.1s">
       <div class="post-head">
         <div class="ph-top-row">
           <div class="post-eyebrow">
-            <span id="eyebrow-2">Carrossel</span> <span class="date"> Quinta, 11 de Junho</span>
+            <span id="eyebrow-2">Carrossel</span> <span class="date"> Segunda, 11 de Maio</span>
           </div>
           <div class="sb sb-none" id="badge-2"><span class="sbp"></span>Aguardando</div>
         </div>
-        <h3 class="post-title">Peça 02 — <em>Posicionamento</em></h3>
+        <h3 class="post-title">Peça 02 — <em>Disfunção Sexual pós-Câncer ou Menopausa</em></h3>
       </div>
       
       <div class="caption-blk" style="padding: 0; background: transparent; border-radius: 0;">
@@ -415,11 +476,10 @@
               <span class="material-symbols-outlined">view_carousel</span> Texto das Artes (Copy)
             </div>
             <div class="copy-cards">
-              <div class="copy-card"><strong>Lâmina 01</strong> [Slide 1] Introdução à tese de posicionamento da Marina.</div>
-              <div class="copy-card"><strong>Lâmina 02</strong> [Slide 2] Exemplificação da dor comum de mercado.</div>
-              <div class="copy-card"><strong>Lâmina 03</strong> [Slide 3] Soluções propostas e diferenciais.</div>
-              <div class="copy-card"><strong>Lâmina 04</strong> [Slide 4] Benefícios e transformação gerada.</div>
-              <div class="copy-card"><strong>Lâmina 05</strong> [Slide 5] Conclusão com gancho para direct ou link.</div>
+              <div class="copy-card"><strong>Lâmina 01</strong> Disfunção sexual feminina pós-câncer ou na pós menopausa: o que é verdade, o que é tratável e o que você pode fazer hoje?</div>
+              <div class="copy-card"><strong>Lâmina 02</strong> Disfunção sexual feminina pós-câncer pode afetar mulheres após tratamento oncológico ginecológico.<br><br>Inclui: dor na relação, ausência de desejo, dificuldade de excitação, ressecamento vaginal, incapacidade de chegar ao orgasmo, sozinha ou acompanhada.</div>
+              <div class="copy-card"><strong>Lâmina 03</strong> <strong>O que pode ser tratável?</strong><br>— Ressecamento e atrofia vaginal → tratamento com estrogênio (a depender do tipo do tumor), laser vaginal ou radiofrequência (as famosas Tecnologias), ácido hialurônico, hidratantes vaginais específicos e até mesmo toxina botulínica (são muitas novidades).<br>— Dor na relação → reabilitação do assoalho pélvico, dilatadores vaginais, terapia miofascial<br>— Ausência de lubrificação → estimulação do tecido com protocolos regenerativos<br>— Queda de libido → este é um tema polêmico e difícil, pois na maioria das vezes, utilizamos um acompanhamento multidisciplinar. Estando lidando com questões multifatoriais. Cabe avaliação hormonal? Cabe! Mas a abordagem é multidisciplinar! quando necessário psicoterapia sexual, fisioterapia e muita conversa com a sua ginecologista e o seu parceiro! Este assunto merece um post apenas sobre isso!!!<br>— Dificuldade de orgasmo → reabilitação neurológica pélvica, reeducação sensorial</div>
+              <div class="copy-card"><strong>Lâmina 04</strong> Verdade difícil, mas necessária: esperar que "volte sozinho" raramente funciona. O tecido sem estímulo e sem cuidado continua se deteriorando.</div>
             </div>
           </div>
           <div class="content-group">
@@ -428,7 +488,7 @@
             </div>
             <div class="caption-body">
               <span class="handle">marinaferrari</span>
-              Escreva aqui a legenda final do post de posicionamento.
+              (Legenda a ser inserida)
             </div>
           </div>
         </div>
@@ -446,15 +506,12 @@
         </div>
       </div>
     </div>
-    
   </div>
 </section>
 
 <!-- ══ POST 3 ══ -->
 <section class="post-section" id="sec-3" style="position:relative;">
   <div class="post-split">
-    
-    <!-- LEFT: Image Gallery -->
     <div class="gallery-col reveal">
         <div class="ig-carousel">
           <div class="ig-mock-header">
@@ -462,17 +519,17 @@
               <img src="foto.jpg" class="ig-mock-ava" alt="Marina">
               <div class="ig-mock-info">
                 <span class="ig-mock-name">marinaferrari</span>
-                <span class="ig-mock-date">Junho 2026</span>
+                <span class="ig-mock-date">Maio 2026</span>
               </div>
             </div>
             <span class="material-symbols-outlined ig-mock-more">more_horiz</span>
           </div>
           <div class="ig-track" id="itrack-3" style="cursor:pointer" onclick="openLightbox('3')">
-            <div class="ig-slide"><img src="Junho/Post 3 - 1.png" loading="lazy" decoding="async"></div>
-            <div class="ig-slide"><img src="Junho/Post 3 - 2.png" loading="lazy" decoding="async"></div>
-            <div class="ig-slide"><img src="Junho/Post 3 - 3.png" loading="lazy" decoding="async"></div>
-            <div class="ig-slide"><img src="Junho/Post 3 - 4.png" loading="lazy" decoding="async"></div>
-            <div class="ig-slide"><img src="Junho/Post 3 - 5.png" loading="lazy" decoding="async"></div>
+            <div class="ig-slide"><img src="Maio/Post 3 - 1.png" loading="lazy" decoding="async"></div>
+            <div class="ig-slide"><img src="Maio/Post 3 - 2.png" loading="lazy" decoding="async"></div>
+            <div class="ig-slide"><img src="Maio/Post 3 - 3.png" loading="lazy" decoding="async"></div>
+            <div class="ig-slide"><img src="Maio/Post 3 - 4.png" loading="lazy" decoding="async"></div>
+            <div class="ig-slide"><img src="Maio/Post 3 - 5.png" loading="lazy" decoding="async"></div>
           </div>
           
           <div class="ig-dots" id="idots-3"></div>
@@ -481,16 +538,15 @@
         </div>
     </div>
     
-    <!-- RIGHT: Info & Actions -->
     <div class="post-panel reveal" style="transition-delay:.1s">
       <div class="post-head">
         <div class="ph-top-row">
           <div class="post-eyebrow">
-            <span id="eyebrow-3">Carrossel</span> <span class="date"> Quinta, 18 de Junho</span>
+            <span id="eyebrow-3">Carrossel</span> <span class="date"> Quinta, 14 de Maio</span>
           </div>
           <div class="sb sb-none" id="badge-3"><span class="sbp"></span>Aguardando</div>
         </div>
-        <h3 class="post-title">Peça 03 — <em>Depoimento</em></h3>
+        <h3 class="post-title">Peça 03 — <em>Tratamentos Disponíveis Pós-Câncer</em></h3>
       </div>
       
       <div class="caption-blk" style="padding: 0; background: transparent; border-radius: 0;">
@@ -500,11 +556,11 @@
               <span class="material-symbols-outlined">view_carousel</span> Texto das Artes (Copy)
             </div>
             <div class="copy-cards">
-              <div class="copy-card"><strong>Lâmina 01</strong> [Slide 1] Chamada com depoimento de cliente da Marina.</div>
-              <div class="copy-card"><strong>Lâmina 02</strong> [Slide 2] Detalhamento do feedback e resultados obtidos.</div>
-              <div class="copy-card"><strong>Lâmina 03</strong> [Slide 3] O impacto da transformação no dia a dia.</div>
-              <div class="copy-card"><strong>Lâmina 04</strong> [Slide 4] Estatísticas ou conquistas desse case.</div>
-              <div class="copy-card"><strong>Lâmina 05</strong> [Slide 5] Call to Action para novos projetos.</div>
+              <div class="copy-card"><strong>Lâmina 01</strong> Tratamentos disponíveis para a saúde ginecológica pós-câncer: o que é cada um, para que serve e quando indicar?<br><br><em>Salve: você vai querer consultar esse conteúdo!</em></div>
+              <div class="copy-card"><strong>Lâmina 02</strong> O laser ginecológico é um procedimento minimamente invasivo que estimula a renovação do colágeno e a revascularização do tecido vaginal, ou seja, ele reativa a capacidade do tecido de se regenerar.<br><br>Age diretamente sobre os efeitos da atrofia: ressecamento, perda de elasticidade, dor na relação e sintomas urinários como urgência e escape de urina.</div>
+              <div class="copy-card"><strong>Lâmina 03</strong> Uso de estrogênio tópico. Ele restaura a espessura e a elasticidade do epitélio vaginal, melhora a lubrificação, diminui infecções urogenitais.</div>
+              <div class="copy-card"><strong>Lâmina 04</strong> Fisioterapia pélvica. O assoalho pélvico é um conjunto de músculos, fáscias e nervos que sustenta os órgãos pélvicos, controla a continência urinária e intestinal e participa diretamente da função sexual.<br><br>Cirurgias, radioterapia e o próprio processo de adoecimento podem deixar esse assoalho tenso, enfraquecido, com cicatrizes aderidas e com padrões de dor crônicos.</div>
+              <div class="copy-card"><strong>Lâmina 05</strong> Esses três tratamentos não são excludentes. Na maioria das vezes, o melhor resultado vem da combinação (laser para restaurar o tecido, estrogênio local para mantê-lo nutrido, fisioterapia para reabilitar a função).<br><br>O que muda de paciente para paciente é a ordem, a dose, o tempo e o que é seguro para cada histórico oncológico.</div>
             </div>
           </div>
           <div class="content-group">
@@ -513,7 +569,7 @@
             </div>
             <div class="caption-body">
               <span class="handle">marinaferrari</span>
-              Escreva aqui a legenda final do post com depoimento de cliente.
+              (Legenda a ser inserida)
             </div>
           </div>
         </div>
@@ -531,41 +587,55 @@
         </div>
       </div>
     </div>
-    
   </div>
 </section>
 
 <!-- ══ POST 4 ══ -->
 <section class="post-section" id="sec-4" style="position:relative;">
   <div class="post-split">
-    
-    <!-- LEFT: Image Gallery -->
     <div class="gallery-col reveal">
-        <div class="ig-carousel" style="cursor:pointer" onclick="openLightbox('4')">
-          <img src="Junho/Post 7.png" style="width:100%; height:auto; display:block;" alt="Post 4" loading="lazy">
+        <div class="ig-phone">
+          <div class="ig-bar">
+            <div class="ig-ava"><img src="foto.jpg" alt="Marina"></div>
+            <div><div class="ig-handle">marinaferrari</div></div>
+            <div class="ig-type">Roteiro</div>
+          </div>
+          <div class="media-placeholder">
+            <span class="material-symbols-outlined mp-icon">videocam</span>
+            <div class="mp-title">Aguardando Vídeo</div>
+            <div class="mp-desc">O roteiro do vídeo está pronto. A gravação e o arquivo de vídeo serão carregados em breve.</div>
+          </div>
+          <div class="ig-foot">
+            <p class="ig-cap"><strong>marinaferrari</strong> Vídeo explicativo sobre assoalho pélvico pós-câncer.</p>
+          </div>
         </div>
     </div>
     
-    <!-- RIGHT: Info & Actions -->
     <div class="post-panel reveal" style="transition-delay:.1s">
       <div class="post-head">
         <div class="ph-top-row">
           <div class="post-eyebrow">
-            <span id="eyebrow-4">Imagem Única</span> <span class="date"> Quinta, 25 de Junho</span>
+            <span id="eyebrow-4">Vídeo (Roteiro)</span> <span class="date"> Segunda, 18 de Maio</span>
           </div>
           <div class="sb sb-none" id="badge-4"><span class="sbp"></span>Aguardando</div>
         </div>
-        <h3 class="post-title">Peça 04 — <em>Conteúdo de Apoio</em></h3>
+        <h3 class="post-title">Peça 04 — <em>O Assoalho Pélvico depois do Câncer</em></h3>
       </div>
       
       <div class="caption-blk" style="padding: 0; background: transparent; border-radius: 0;">
         <div class="content-groups">
           <div class="content-group">
             <div class="cg-header">
-              <span class="material-symbols-outlined">image</span> Texto da Imagem (Copy)
+              <span class="material-symbols-outlined">notes</span> Roteiro do Vídeo (Copy)
             </div>
             <div class="copy-cards">
-              <div class="copy-card">Acompanhe as novidades e agenda de mentorias da semana.</div>
+              <div class="copy-card">
+                <strong>O assoalho pélvico depois do câncer: por que ele precisa de atenção?</strong><br><br>
+                Você sabia que o assoalho pélvico é um dos tecidos mais afetados pelo tratamento oncológico ginecológico e um dos menos mencionados depois que ele termina?<br><br>
+                Cirurgia, radioterapia, quimioterapia: tudo isso pode deixar essa musculatura tensa, enfraquecida ou com padrão de dor crônica. E o resultado aparece no dia a dia: escape de urina, sensação de peso na pelve, dor na relação, dificuldade de orgasmo.<br><br>
+                Sintomas que a maioria das mulheres engole em silêncio, achando que é sequela normal, que tem que aceitar, que "é assim mesmo depois do câncer."<br><br>
+                Não é assim mesmo. O assoalho pélvico tem tratamento. Tem reabilitação. E quanto mais cedo começa, mais fácil é recuperar o que foi comprometido.
+              </div>
             </div>
           </div>
           <div class="content-group">
@@ -574,7 +644,7 @@
             </div>
             <div class="caption-body">
               <span class="handle">marinaferrari</span>
-              Escreva aqui a legenda final do post da imagem única.
+              (Legenda / Roteiro do vídeo)
             </div>
           </div>
         </div>
@@ -584,7 +654,7 @@
         <div class="reject-alert" id="ralert-4">⚠ Para reprovar, adicione um comentário primeiro.</div>
         <div class="actions">
           <div class="actions-left">
-            <button class="abtn btn-ap" id="ba-4" onclick="event.stopPropagation(); setStatus('4','approved')"><span class="material-symbols-outlined" style="font-size:18px;">check</span> Aprovar</button>
+            <button class="abtn btn-ap" id="ba-4" onclick="event.stopPropagation(); setStatus('4','approved')"><span class="material-symbols-outlined" style="font-size:18px;">check</span>  Aprovar</button>
             <button class="abtn btn-rj" id="br-4" onclick="event.stopPropagation(); setStatus('4','rejected')"><span class="material-symbols-outlined" style="font-size:18px;">close</span> Reprovar</button>
             <button class="abtn btn-lt" id="bl-4" onclick="event.stopPropagation(); openReviewModal('4')"><span class="material-symbols-outlined" style="font-size:18px;">schedule</span> Revisar</button>
           </div>
@@ -592,7 +662,287 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ══ POST 5 ══ -->
+<section class="post-section" id="sec-5" style="position:relative;">
+  <div class="post-split">
+    <div class="gallery-col reveal">
+        <div class="ig-phone">
+          <div class="ig-bar">
+            <div class="ig-ava"><img src="foto.jpg" alt="Marina"></div>
+            <div><div class="ig-handle">marinaferrari</div></div>
+            <div class="ig-type">Roteiro</div>
+          </div>
+          <div class="media-placeholder">
+            <span class="material-symbols-outlined mp-icon">videocam</span>
+            <div class="mp-title">Aguardando Vídeo</div>
+            <div class="mp-desc">O roteiro do vídeo está pronto. A gravação e o arquivo de vídeo serão carregados em breve.</div>
+          </div>
+          <div class="ig-foot">
+            <p class="ig-cap"><strong>marinaferrari</strong> O que é o colágeno vaginal e por que ele importa tanto.</p>
+          </div>
+        </div>
+    </div>
     
+    <div class="post-panel reveal" style="transition-delay:.1s">
+      <div class="post-head">
+        <div class="ph-top-row">
+          <div class="post-eyebrow">
+            <span id="eyebrow-5">Vídeo (Roteiro)</span> <span class="date"> Quinta, 21 de Maio</span>
+          </div>
+          <div class="sb sb-none" id="badge-5"><span class="sbp"></span>Aguardando</div>
+        </div>
+        <h3 class="post-title">Peça 05 — <em>O que é o Colágeno Vaginal</em></h3>
+      </div>
+      
+      <div class="caption-blk" style="padding: 0; background: transparent; border-radius: 0;">
+        <div class="content-groups">
+          <div class="content-group">
+            <div class="cg-header">
+              <span class="material-symbols-outlined">notes</span> Roteiro do Vídeo (Copy)
+            </div>
+            <div class="copy-cards">
+              <div class="copy-card">
+                <strong>O que é o colágeno vaginal e por que ele importa tanto depois da menopausa?</strong><br><br>
+                Tem uma estrutura dentro da parede vaginal que a maioria das mulheres nunca ouviu falar e que muda muito depois da menopausa: o colágeno vaginal.<br><br>
+                Ele é responsável pela elasticidade, pela espessura e pela lubrificação natural do tecido. Enquanto o estrogênio está em níveis adequados, ele se renova. O tecido fica firme, hidratado, funcional. Quando o estrogênio cai, seja pela menopausa natural, seja pelo tratamento oncológico, essa renovação para.<br><br>
+                O colágeno se degrada. O tecido afina. Resseca. Perde elasticidade. E aí aparecem os sintomas que ninguém associa a isso: ardor, dor na relação, infecções urinárias de repetição, sensação de queimação que não passa.<br><br>
+                O problema é que esse processo é silencioso e progressivo. Quanto mais tempo sem cuidado, mais difícil reverter.<br><br>
+                A boa notícia: existe tratamento que estimula a produção de novo colágeno e que devolve função para esse tecido.
+              </div>
+            </div>
+          </div>
+          <div class="content-group">
+            <div class="cg-header">
+              <span class="material-symbols-outlined">notes</span> Legenda do Post
+            </div>
+            <div class="caption-body">
+              <span class="handle">marinaferrari</span>
+              (Legenda / Roteiro do vídeo)
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="panel-actions-wrapper">
+        <div class="reject-alert" id="ralert-5">⚠ Para reprovar, adicione um comentário primeiro.</div>
+        <div class="actions">
+          <div class="actions-left">
+            <button class="abtn btn-ap" id="ba-5" onclick="event.stopPropagation(); setStatus('5','approved')"><span class="material-symbols-outlined" style="font-size:18px;">check</span> Aprovar</button>
+            <button class="abtn btn-rj" id="br-5" onclick="event.stopPropagation(); setStatus('5','rejected')"><span class="material-symbols-outlined" style="font-size:18px;">close</span> Reprovar</button>
+            <button class="abtn btn-lt" id="bl-5" onclick="event.stopPropagation(); openReviewModal('5')"><span class="material-symbols-outlined" style="font-size:18px;">schedule</span> Revisar</button>
+          </div>
+          <button class="abtn btn-cm" id="bc-5" onclick="event.stopPropagation(); openCommentsModal('5')"><span class="material-symbols-outlined" style="font-size:18px;">chat</span> Comentários</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ POST 6 ══ -->
+<section class="post-section" id="sec-6" style="position:relative;">
+  <div class="post-split">
+    <div class="gallery-col reveal">
+        <div class="ig-phone">
+          <div class="ig-bar">
+            <div class="ig-ava"><img src="foto.jpg" alt="Marina"></div>
+            <div><div class="ig-handle">marinaferrari</div></div>
+            <div class="ig-type">Roteiro</div>
+          </div>
+          <div class="media-placeholder">
+            <span class="material-symbols-outlined mp-icon">videocam</span>
+            <div class="mp-title">Aguardando Vídeo</div>
+            <div class="mp-desc">O roteiro do vídeo está pronto. A gravação e o arquivo de vídeo serão carregados em breve.</div>
+          </div>
+          <div class="ig-foot">
+            <p class="ig-cap"><strong>marinaferrari</strong> Minha menstruação parou durante a quimio. Isso é normal?</p>
+          </div>
+        </div>
+    </div>
+    
+    <div class="post-panel reveal" style="transition-delay:.1s">
+      <div class="post-head">
+        <div class="ph-top-row">
+          <div class="post-eyebrow">
+            <span id="eyebrow-6">Vídeo (Roteiro)</span> <span class="date"> Segunda, 25 de Maio</span>
+          </div>
+          <div class="sb sb-none" id="badge-6"><span class="sbp"></span>Aguardando</div>
+        </div>
+        <h3 class="post-title">Peça 06 — <em>Menstruação Parou na Quimio</em></h3>
+      </div>
+      
+      <div class="caption-blk" style="padding: 0; background: transparent; border-radius: 0;">
+        <div class="content-groups">
+          <div class="content-group">
+            <div class="cg-header">
+              <span class="material-symbols-outlined">notes</span> Roteiro do Vídeo (Copy)
+            </div>
+            <div class="copy-cards">
+              <div class="copy-card">
+                <strong>Minha menstruação parou durante a quimio. Isso é normal? Vai voltar?</strong><br><br>
+                A quimioterapia age em células que se dividem rapidamente. Os folículos ovarianos entram nessa conta. Então sim — é comum a menstruação parar durante o tratamento. O que vai determinar se ela volta ou não depende de três fatores principais.<br><br>
+                A sua idade no momento do tratamento. Quanto mais jovem, maior a reserva ovariana e maior a chance de recuperação.<br><br>
+                O tipo e a dose do quimioterápico usado. Alguns são muito mais agressivos para os ovários do que outros.<br><br>
+                E o tempo. Em alguns casos a menstruação volta meses depois do término. Em outros, não volta e o que aconteceu foi uma falência ovariana precoce induzida pelo tratamento.<br><br>
+                A única forma de saber onde você está é com avaliação da reserva ovariana, um exame de sangue e um ultrassom.<br><br>
+                Não espera tentando adivinhar. Esse é exatamente o tipo de acompanhamento que precisa acontecer depois do tratamento.
+              </div>
+            </div>
+          </div>
+          <div class="content-group">
+            <div class="cg-header">
+              <span class="material-symbols-outlined">notes</span> Legenda do Post
+            </div>
+            <div class="caption-body">
+              <span class="handle">marinaferrari</span>
+              (Legenda / Roteiro do vídeo)
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="panel-actions-wrapper">
+        <div class="reject-alert" id="ralert-6">⚠ Para reprovar, adicione um comentário primeiro.</div>
+        <div class="actions">
+          <div class="actions-left">
+            <button class="abtn btn-ap" id="ba-6" onclick="event.stopPropagation(); setStatus('6','approved')"><span class="material-symbols-outlined" style="font-size:18px;">check</span> Aprovar</button>
+            <button class="abtn btn-rj" id="br-6" onclick="event.stopPropagation(); setStatus('6','rejected')"><span class="material-symbols-outlined" style="font-size:18px;">close</span> Reprovar</button>
+            <button class="abtn btn-lt" id="bl-6" onclick="event.stopPropagation(); openReviewModal('6')"><span class="material-symbols-outlined" style="font-size:18px;">schedule</span> Revisar</button>
+          </div>
+          <button class="abtn btn-cm" id="bc-6" onclick="event.stopPropagation(); openCommentsModal('6')"><span class="material-symbols-outlined" style="font-size:18px;">chat</span> Comentários</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ POST 7 ══ -->
+<section class="post-section" id="sec-7" style="position:relative;">
+  <div class="post-split">
+    <div class="gallery-col reveal">
+        <div class="ig-carousel" style="cursor:pointer" onclick="openLightbox('7')">
+          <img src="Maio/Post 7.png" style="width:100%; height:auto; display:block;" alt="Post 7" loading="lazy">
+        </div>
+    </div>
+    
+    <div class="post-panel reveal" style="transition-delay:.1s">
+      <div class="post-head">
+        <div class="ph-top-row">
+          <div class="post-eyebrow">
+            <span id="eyebrow-7">Card Único</span> <span class="date"> Quinta, 28 de Maio</span>
+          </div>
+          <div class="sb sb-none" id="badge-7"><span class="sbp"></span>Aguardando</div>
+        </div>
+        <h3 class="post-title">Peça 07 — <em>Gravidez após o Tratamento Oncológico</em></h3>
+      </div>
+      
+      <div class="caption-blk" style="padding: 0; background: transparent; border-radius: 0;">
+        <div class="content-groups">
+          <div class="content-group">
+            <div class="cg-header">
+              <span class="material-symbols-outlined">image</span> Texto da Imagem (Copy)
+            </div>
+            <div class="copy-cards">
+              <div class="copy-card">Posso engravidar depois do tratamento? Ainda dá tempo de preservar minha fertilidade?<br><br>Se você está no diagnóstico ou conhece alguém que está, ler a legenda pode mudar o rumo de uma história.</div>
+            </div>
+          </div>
+          <div class="content-group">
+            <div class="cg-header">
+              <span class="material-symbols-outlined">notes</span> Legenda do Post
+            </div>
+            <div class="caption-body">
+              <span class="handle">marinaferrari</span>
+              "Posso ainda engravidar?" é uma das perguntas mais difíceis que recebo no consultório.<br>Não pela resposta em si, mas pelo momento em que ela chega. Muitas vezes, tarde demais para preservar o que ainda existia.<br>Para algumas mulheres, sim, a função ovariana se recupera após o término do tratamento, especialmente em quimioterapias menos agressivas e em mulheres mais jovens.<br>Para outras, a gravidez espontânea não será possível, mas a maternidade ainda pode ser, por outros meios.<br><br>O que precisa acontecer antes de qualquer tentativa:<br>— Avaliação da reserva ovariana atual (AMH, contagem de folículos antrais)<br>— Tempo de segurança oncológica definido com o oncologista (geralmente 2 a 5 anos após o término do tratamento, dependendo do tipo de câncer)<br>— Acompanhamento conjunto entre oncoginecologista e especialista em reprodução assistida.
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="panel-actions-wrapper">
+        <div class="reject-alert" id="ralert-7">⚠ Para reprovar, adicione um comentário primeiro.</div>
+        <div class="actions">
+          <div class="actions-left">
+            <button class="abtn btn-ap" id="ba-7" onclick="event.stopPropagation(); setStatus('7','approved')"><span class="material-symbols-outlined" style="font-size:18px;">check</span> Aprovar</button>
+            <button class="abtn btn-rj" id="br-7" onclick="event.stopPropagation(); setStatus('7','rejected')"><span class="material-symbols-outlined" style="font-size:18px;">close</span> Reprovar</button>
+            <button class="abtn btn-lt" id="bl-7" onclick="event.stopPropagation(); openReviewModal('7')"><span class="material-symbols-outlined" style="font-size:18px;">schedule</span> Revisar</button>
+          </div>
+          <button class="abtn btn-cm" id="bc-7" onclick="event.stopPropagation(); openCommentsModal('7')"><span class="material-symbols-outlined" style="font-size:18px;">chat</span> Comentários</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ POST 8 ══ -->
+<section class="post-section" id="sec-8" style="position:relative;">
+  <div class="post-split">
+    <div class="gallery-col reveal">
+        <div class="ig-phone">
+          <div class="ig-bar">
+            <div class="ig-ava"><img src="foto.jpg" alt="Marina"></div>
+            <div><div class="ig-handle">marinaferrari</div></div>
+            <div class="ig-type">Fotos Rotina</div>
+          </div>
+          <div class="media-placeholder">
+            <span class="material-symbols-outlined mp-icon">photo_camera</span>
+            <div class="mp-title">Aguardando Fotos</div>
+            <div class="mp-desc">Envie fotos da sua rotina (café da manhã, trabalho) pelo WhatsApp para as adicionarmos aqui.</div>
+          </div>
+          <div class="ig-foot">
+            <p class="ig-cap"><strong>marinaferrari</strong> Retratos do dia a dia ginecológico.</p>
+          </div>
+        </div>
+    </div>
+    
+    <div class="post-panel reveal" style="transition-delay:.1s">
+      <div class="post-head">
+        <div class="ph-top-row">
+          <div class="post-eyebrow">
+            <span id="eyebrow-8">Card Único (Rotina)</span> <span class="date"> Segunda, 01 de Junho</span>
+          </div>
+          <div class="sb sb-none" id="badge-8"><span class="sbp"></span>Aguardando</div>
+        </div>
+        <h3 class="post-title">Peça 08 — <em>Fotos da Rotina</em></h3>
+      </div>
+      
+      <div class="caption-blk" style="padding: 0; background: transparent; border-radius: 0;">
+        <div class="content-groups">
+          <div class="content-group">
+            <div class="cg-header">
+              <span class="material-symbols-outlined">image</span> Sugestão de Conteúdo (Copy)
+            </div>
+            <div class="copy-cards">
+              <div class="copy-card">
+                Mari, aqui, minha sugestão é também termos conteúdos mais da tua rotina, com retratos de algumas coisas que tu faz no dia a dia: café da manhã, ida pro trabalho, e por aí vai. Vou te explicar mais no Whatsapp e tu manda as fotos por lá.
+              </div>
+            </div>
+          </div>
+          <div class="content-group">
+            <div class="cg-header">
+              <span class="material-symbols-outlined">notes</span> Legenda do Post
+            </div>
+            <div class="caption-body">
+              <span class="handle">marinaferrari</span>
+              (Fotos e legenda a serem enviadas pela Marina)
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="panel-actions-wrapper">
+        <div class="reject-alert" id="ralert-8">⚠ Para reprovar, adicione um comentário primeiro.</div>
+        <div class="actions">
+          <div class="actions-left">
+            <button class="abtn btn-ap" id="ba-8" onclick="event.stopPropagation(); setStatus('8','approved')"><span class="material-symbols-outlined" style="font-size:18px;">check</span> Aprovar</button>
+            <button class="abtn btn-rj" id="br-8" onclick="event.stopPropagation(); setStatus('8','rejected')"><span class="material-symbols-outlined" style="font-size:18px;">close</span> Reprovar</button>
+            <button class="abtn btn-lt" id="bl-8" onclick="event.stopPropagation(); openReviewModal('8')"><span class="material-symbols-outlined" style="font-size:18px;">schedule</span> Revisar</button>
+          </div>
+          <button class="abtn btn-cm" id="bc-8" onclick="event.stopPropagation(); openCommentsModal('8')"><span class="material-symbols-outlined" style="font-size:18px;">chat</span> Comentários</button>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -639,9 +989,29 @@
           <div class="dl-text">Post 3 — Carrossel</div>
           <span class="material-symbols-outlined">download</span>
         </a>
-        <a href="#" class="dl-item" target="_blank">
+        <a href="#" class="dl-item disabled" style="opacity:0.5; pointer-events:none;" onclick="event.preventDefault();">
           <div class="dl-icon">04</div>
-          <div class="dl-text">Post 4 — Imagem Única</div>
+          <div class="dl-text">Post 4 — Vídeo (Pendente)</div>
+          <span class="material-symbols-outlined">download</span>
+        </a>
+        <a href="#" class="dl-item disabled" style="opacity:0.5; pointer-events:none;" onclick="event.preventDefault();">
+          <div class="dl-icon">05</div>
+          <div class="dl-text">Post 5 — Vídeo (Pendente)</div>
+          <span class="material-symbols-outlined">download</span>
+        </a>
+        <a href="#" class="dl-item disabled" style="opacity:0.5; pointer-events:none;" onclick="event.preventDefault();">
+          <div class="dl-icon">06</div>
+          <div class="dl-text">Post 6 — Vídeo (Pendente)</div>
+          <span class="material-symbols-outlined">download</span>
+        </a>
+        <a href="#" class="dl-item" target="_blank">
+          <div class="dl-icon">07</div>
+          <div class="dl-text">Post 7 — Card Único</div>
+          <span class="material-symbols-outlined">download</span>
+        </a>
+        <a href="#" class="dl-item disabled" style="opacity:0.5; pointer-events:none;" onclick="event.preventDefault();">
+          <div class="dl-icon">08</div>
+          <div class="dl-text">Post 8 — Rotina (Pendente)</div>
           <span class="material-symbols-outlined">download</span>
         </a>
       </div>
@@ -662,7 +1032,7 @@
             <span class="sp-lbl">Aprovados</span>
           </div>
           <div class="summary-pill pending-pill">
-            <span class="sp-num" id="f-pending">4</span>
+            <span class="sp-num" id="f-pending">8</span>
             <span class="sp-lbl">Pendentes</span>
           </div>
           <div class="summary-pill rejected-pill">
@@ -766,6 +1136,10 @@
   <div id="comments-2"></div>
   <div id="comments-3"></div>
   <div id="comments-4"></div>
+  <div id="comments-5"></div>
+  <div id="comments-6"></div>
+  <div id="comments-7"></div>
+  <div id="comments-8"></div>
 </div>
 
 <!-- ═══════════════ PROJECT VIEWER ═══════════════ -->
@@ -798,6 +1172,6 @@
   </div>
 </div>
 
-<script defer src="junho.js"></script>
+<script defer src="maio.js"></script>
 </body>
 </html>

@@ -75,11 +75,11 @@ function igSlide(id,dir){
   track.scrollTo({ left: ni * slideWidth, behavior: 'smooth' });
 }
 
-// Initialize all 3 carousels (Post 4 is a single image, so only 1, 2, and 3 are carousels)
+// Initialize carousels (only 1, 2, and 3 are slide tracks)
 ['1','2','3'].forEach(initIG);
 
 /* ── Status & actions ─────────────────────────────────── */
-const statuses = {1:'none', 2:'none', 3:'none', 4:'none'};
+const statuses = {1:'none', 2:'none', 3:'none', 4:'none', 5:'none', 6:'none', 7:'none', 8:'none'};
 const smap = {
   approved:{ label:'Aprovado',   sb:'sb-approved' },
   rejected:{ label:'Reprovado',  sb:'sb-rejected' },
@@ -123,7 +123,7 @@ function updateCounts(){
   const vals = Object.values(statuses);
   const a = vals.filter(v=>v==='approved').length;
   const r = vals.filter(v=>v==='rejected').length;
-  const total = 4;
+  const total = 8;
   const p = total - a - r;
   
   // Header progress
@@ -305,7 +305,7 @@ async function saveState(){
   if (!currentUser || !currentToken) return; // Só tenta salvar se estiver logado
 
   const data = { statuses:{...statuses}, comments:{} };
-  ['1','2','3','4'].forEach(id=>{
+  ['1','2','3','4','5','6','7','8'].forEach(id=>{
     const cl=document.getElementById(`comments-${id}`);
     if(cl){
       const items=cl.querySelectorAll('.comment-item');
@@ -373,7 +373,7 @@ async function loadState(){
     const resp=await fetch('/api/load');
     const data=await resp.json();
     if(!data||Object.keys(data).length===0){ updateCounts(); return; }
-    ['1','2','3','4'].forEach(id=>{
+    ['1','2','3','4','5','6','7','8'].forEach(id=>{
       const comments=data.comments?.[id]||[];
       const cl=document.getElementById(`comments-${id}`);
       if(cl && comments.length){
@@ -385,7 +385,7 @@ async function loadState(){
         if(bc) bc.classList.add('visible');
       }
     });
-    ['1','2','3','4'].forEach(id=>{ const s=data.statuses?.[id]||'none'; if(s!=='none') applyStatus(id,s); });
+    ['1','2','3','4','5','6','7','8'].forEach(id=>{ const s=data.statuses?.[id]||'none'; if(s!=='none') applyStatus(id,s); });
   } catch(e){ console.error('Erro ao carregar:',e); }
   updateCounts();
 }
@@ -446,52 +446,57 @@ document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
 let lbPost=null, lbIdx=0;
 
 const lbSources = {
-  '1': ['Junho/Post 1 - 1.png', 'Junho/Post 1 - 2.png', 'Junho/Post 1 - 3.png', 'Junho/Post 1 - 4.png', 'Junho/Post 1 - 5.png'],
-  '2': ['Junho/Post 2 - 1.png', 'Junho/Post 2 - 2.png', 'Junho/Post 2 - 3.png', 'Junho/Post 2 - 4.png', 'Junho/Post 2 - 5.png'],
-  '3': ['Junho/Post 3 - 1.png', 'Junho/Post 3 - 2.png', 'Junho/Post 3 - 3.png', 'Junho/Post 3 - 4.png', 'Junho/Post 3 - 5.png'],
-  '4': ['Junho/Post 7.png']
+  '1': ['Maio/Post 1 - 1.png', 'Maio/Post 1 - 2.png', 'Maio/Post 1 - 3.png', 'Maio/Post 1 - 4.png', 'Maio/Post 1 - 5.png'],
+  '2': ['Maio/Post 2 - 1.png', 'Maio/Post 2 - 2.png', 'Maio/Post 2 - 3.png', 'Maio/Post 2 - 4.png', 'Maio/Post 2 - 5.png'],
+  '3': ['Maio/Post 3 - 1.png', 'Maio/Post 3 - 2.png', 'Maio/Post 3 - 3.png', 'Maio/Post 3 - 4.png', 'Maio/Post 3 - 5.png'],
+  '4': [],
+  '5': [],
+  '6': [],
+  '7': ['Maio/Post 7.png'],
+  '8': []
 };
 
 const postMeta = {
   '1': { 
-    caption: '<strong>[Carrossel] Apresentação</strong>', 
+    caption: '<strong>[Carrossel] Efeitos Ginecológicos do Tratamento Oncológico</strong>', 
     cards: [
-      '[Slide 1] Texto de apresentação da primeira lâmina.',
-      '[Slide 2] Detalhamento sobre a história e os bastidores.',
-      '[Slide 3] O propósito do trabalho e o que ela desenvolve.',
-      '[Slide 4] Como a criação de conteúdo impacta seus clientes.',
-      '[Slide 5] Chamada para ação e convite para interagir.'
+      'Efeitos ginecológicos do tratamento oncológico que talvez você nunca tenha ouvido falar',
+      'O câncer ginecológico está relacionado à morbidade e mortalidade das mulheres brasileiras. Essas patologias impactam não apenas na qualidade de vida, sexualidade e funcionamento psicossocial das milhares de mulheres acometidas.',
+      'Quimioterapia, radioterapia e hormonioterapia podem causar uma queda brusca de estrogênio, mesmo em mulheres jovens. O resultado é um ressecamento intenso, ardor e dor genitourinária.',
+      'A perda do útero, ovários ou parte da vulva afeta a identidade feminina. Nomear esse sofrimento faz parte do cuidado, e a ginecologia regenerativa busca reconstruir o que for possível.',
+      'Se algum desses efeitos existe na sua vida ou de alguém próximo, compartilhe e atente-se às possibilidades.'
     ] 
   },
   '2': { 
-    caption: '<strong>[Carrossel] Posicionamento</strong>', 
+    caption: '<strong>[Carrossel] Disfunção Sexual pós-Câncer ou Menopausa</strong>', 
     cards: [
-      '[Slide 1] Introdução à tese de posicionamento da Marina.',
-      '[Slide 2] Exemplificação da dor comum de mercado.',
-      '[Slide 3] Soluções propostas e diferenciais.',
-      '[Slide 4] Benefícios e transformação gerada.',
-      '[Slide 5] Conclusão com gancho para direct ou link.'
+      'Disfunção sexual feminina pós-câncer ou na pós menopausa: o que é verdade, o que é tratável e o que você pode fazer hoje?',
+      'A disfunção sexual pós-tratamento inclui dor na relação, ausência de desejo, atrofia, ressecamento vaginal e dificuldade de chegar ao orgasmo.',
+      'O que é tratável? Ressecamento (com laser vaginal, radiofrequência, estrogênio ou hidratantes); Dor (com fisioterapia pélvica, dilatadores); Libido (abordagem multidisciplinar com psicoterapia e hormônios); Orgasmo (reabilitação sensorial).',
+      'Verdade difícil: esperar voltar sozinho raramente funciona. O tecido necessita de estímulo e cuidados ativos para não se deteriorar.'
     ] 
   },
   '3': { 
-    caption: '<strong>[Carrossel] Depoimento</strong>', 
+    caption: '<strong>[Carrossel] Tratamentos Disponíveis Pós-Câncer</strong>', 
     cards: [
-      '[Slide 1] Chamada com depoimento de cliente da Marina.',
-      '[Slide 2] Detalhamento do feedback e resultados obtidos.',
-      '[Slide 3] O impacto da transformação no dia a dia.',
-      '[Slide 4] Estatísticas ou conquistas desse case.',
-      '[Slide 5] Call to Action para novos projetos.'
+      'Tratamentos disponíveis para a saúde ginecológica pós-câncer: o que é cada um, para que serve e quando indicar? (Salve para consultar depois!)',
+      'O laser ginecológico é minimamente invasivo, estimula colágeno e revascularização da vagina, tratando atrofia, ressecamento, dor e escapes urinários.',
+      'O uso de estrogênio tópico restaura a espessura e elasticidade do epitélio vaginal, melhora a lubrificação e previne infecções recorrentes.',
+      'A fisioterapia pélvica reabilita o assoalho pélvico (músculos e nervos que sustentam a pelve), tratando cicatrizes, tensão e dor crônica pós-tratamentos.',
+      'Esses tratamentos se complementam (laser regenera, estrogênio nutre e fisioterapia reabilita). A ordem e dosagem dependem de cada histórico oncológico.'
     ] 
   },
-  '4': { 
-    caption: '<strong>[Imagem Única] Conteúdo de Apoio</strong>', 
-    cards: [
-      'Acompanhe as novidades e agenda de mentorias da semana.'
-    ] 
-  }
+  '4': { caption: '<strong>[Vídeo] O Assoalho Pélvico depois do Câncer</strong>', cards: [] },
+  '5': { caption: '<strong>[Vídeo] O que é o Colágeno Vaginal</strong>', cards: [] },
+  '6': { caption: '<strong>[Vídeo] Menstruação Parou na Quimio</strong>', cards: [] },
+  '7': { caption: '<strong>[Card Único] Gravidez após o Tratamento Oncológico</strong>', cards: [] },
+  '8': { caption: '<strong>[Card Único] Fotos da Rotina</strong>', cards: [] }
 };
 
 function openLightbox(postId){
+  // Do not open lightbox for posts that have no media
+  if (!lbSources[postId] || lbSources[postId].length === 0) return;
+  
   lbPost=postId; lbIdx=ig[postId]?ig[postId].i:0;
   renderLightbox();
   populateLbRight(postId);
@@ -500,7 +505,7 @@ function openLightbox(postId){
 }
 
 function renderLightbox(){
-  const srcs=lbSources[lbPost]; if(!srcs) return;
+  const srcs=lbSources[lbPost]; if(!srcs || srcs.length === 0) return;
   const total=srcs.length;
   const prev=document.getElementById('lbPrev');
   const next=document.getElementById('lbNext');
@@ -716,7 +721,7 @@ function moveMainPosts(dir) {
   }
 }
 
-/* ── Post Indicator ════════════════════════════════════ */
+/* ── Post Indicator ──────────────────────────────────── */
 function goToPost(idx) {
   const track = document.getElementById("mainPostsTrack");
   if (!track) return;
@@ -754,7 +759,7 @@ function updatePostIndicator(idx) {
 })();
 
 
-/* ── Mobile Meta Bar ════════════════════════════════════ */
+/* ── Mobile Meta Bar ──────────────────────────────────── */
 function setupMobileMeta() {
   const isMobile = window.innerWidth <= 768;
 

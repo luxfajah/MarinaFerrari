@@ -446,13 +446,13 @@ document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
 let lbPost=null, lbIdx=0;
 
 const lbSources = {
-  '1': ['Maio/Post 1 - 1.png', 'Maio/Post 1 - 2.png', 'Maio/Post 1 - 3.png', 'Maio/Post 1 - 4.png', 'Maio/Post 1 - 5.png'],
-  '2': ['Maio/Post 2 - 1.png', 'Maio/Post 2 - 2.png', 'Maio/Post 2 - 3.png', 'Maio/Post 2 - 4.png', 'Maio/Post 2 - 5.png'],
-  '3': ['Maio/Post 3 - 1.png', 'Maio/Post 3 - 2.png', 'Maio/Post 3 - 3.png', 'Maio/Post 3 - 4.png', 'Maio/Post 3 - 5.png'],
+  '1': ['Maio/Post 1 - 1.jpg', 'Maio/Post 1 - 2.jpg', 'Maio/Post 1 - 3.jpg', 'Maio/Post 1 - 4.jpg', 'Maio/Post 1 - 5.jpg'],
+  '2': ['Maio/Post 2 - 1.jpg', 'Maio/Post 2 - 2.jpg', 'Maio/Post 2 - 3.jpg', 'Maio/Post 2 - 4.jpg', 'Maio/Post 2 - 5.jpg'],
+  '3': ['Maio/Post 3 - 1.jpg', 'Maio/Post 3 - 2.jpg', 'Maio/Post 3 - 3.jpg', 'Maio/Post 3 - 4.jpg', 'Maio/Post 3 - 5.jpg'],
   '4': [],
   '5': [],
   '6': [],
-  '7': ['Maio/Post 7.png'],
+  '7': ['Maio/Post 7.jpg'],
   '8': []
 };
 

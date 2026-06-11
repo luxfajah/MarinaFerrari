@@ -464,7 +464,7 @@ const postMeta = {
       'O câncer ginecológico está relacionado à morbidade e mortalidade das mulheres brasileiras. Essas patologias impactam não apenas na qualidade de vida, sexualidade e funcionamento psicossocial das milhares de mulheres acometidas.',
       'Quimioterapia, radioterapia e hormonioterapia podem causar uma queda brusca de estrogênio, mesmo em mulheres jovens. O resultado é um ressecamento intenso, ardor e dor genitourinária.',
       'A perda do útero, ovários ou parte da vulva afeta a identidade feminina. Nomear esse sofrimento faz parte do cuidado, e a ginecologia regenerativa busca reconstruir o que for possível.',
-      'Se algum desses efeitos existe na sua vida ou de alguém próximo, compartilhe e atente-se às possibilidades.'
+      'Se algum desses efeitos existe na sua vida ou na de alguém próxima, encaminhe este conteúdo & não deixe de falar e estar atenta às possibilidades.'
     ] 
   },
   '2': { 
